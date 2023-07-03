@@ -1,0 +1,106 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+AltitudeDisplay	AltitudeDisplay.java	/^    public AltitudeDisplay() {$/;"	m	class:AltitudeDisplay
+AltitudeDisplay	AltitudeDisplay.java	/^public class AltitudeDisplay extends JPanel {$/;"	c
+AltitudeDisplay.AltitudeDisplay	AltitudeDisplay.java	/^    public AltitudeDisplay() {$/;"	m	class:AltitudeDisplay
+AltitudeDisplay.contact	AltitudeDisplay.java	/^    Icon contact = new ImageIcon( getClass().getResource("led-orange.png"));$/;"	f	class:AltitudeDisplay
+AltitudeDisplay.contactlight	AltitudeDisplay.java	/^    private JLabel  contactlight;$/;"	f	class:AltitudeDisplay	file:
+AltitudeDisplay.gauge	AltitudeDisplay.java	/^    private JProgressBar gauge;$/;"	f	class:AltitudeDisplay	file:
+AltitudeDisplay.java	AltitudeDisplay.java	1;"	F
+AltitudeDisplay.off	AltitudeDisplay.java	/^    Icon  off = new ImageIcon( getClass().getResource("led-grey.png"));$/;"	f	class:AltitudeDisplay
+AltitudeDisplay.proximity	AltitudeDisplay.java	/^    final float proximity = 15.0f;$/;"	f	class:AltitudeDisplay
+AltitudeDisplay.quantity	AltitudeDisplay.java	/^    private JTextField quantity;$/;"	f	class:AltitudeDisplay	file:
+AltitudeDisplay.serialVersionUID	AltitudeDisplay.java	/^    private static final long serialVersionUID = 42l;$/;"	f	class:AltitudeDisplay	file:
+AltitudeDisplay.setAltitude	AltitudeDisplay.java	/^    public void setAltitude(float alt) {$/;"	m	class:AltitudeDisplay
+AltitudeDisplay.warn	AltitudeDisplay.java	/^    Icon warn = new ImageIcon( getClass().getResource("led-red.png"));$/;"	f	class:AltitudeDisplay
+AltitudeDisplay.warninglight	AltitudeDisplay.java	/^    private JLabel  warninglight;$/;"	f	class:AltitudeDisplay	file:
+DatagramPanel	DatagramPanel.java	/^    public DatagramPanel() {$/;"	m	class:DatagramPanel
+DatagramPanel	DatagramPanel.java	/^public class DatagramPanel extends JPanel {$/;"	c
+DatagramPanel.DatagramPanel	DatagramPanel.java	/^    public DatagramPanel() {$/;"	m	class:DatagramPanel
+DatagramPanel.addressname	DatagramPanel.java	/^    JTextField addressname, port;$/;"	f	class:DatagramPanel
+DatagramPanel.java	DatagramPanel.java	1;"	F
+DatagramPanel.port	DatagramPanel.java	/^    JTextField addressname, port;$/;"	f	class:DatagramPanel
+DatagramPanel.serialVersionUID	DatagramPanel.java	/^    public static final long serialVersionUID = 2L;$/;"	f	class:DatagramPanel
+DatagramPanel.setAddress	DatagramPanel.java	/^    void setAddress(InetSocketAddress where) {$/;"	m	class:DatagramPanel
+FuelDisplay	FuelDisplay.java	/^    public FuelDisplay() {$/;"	m	class:FuelDisplay
+FuelDisplay	FuelDisplay.java	/^public class FuelDisplay extends JPanel {$/;"	c
+FuelDisplay.FuelDisplay	FuelDisplay.java	/^    public FuelDisplay() {$/;"	m	class:FuelDisplay
+FuelDisplay.bingo	FuelDisplay.java	/^    final float bingo = 10.0f;$/;"	f	class:FuelDisplay
+FuelDisplay.gauge	FuelDisplay.java	/^    private JProgressBar gauge;$/;"	f	class:FuelDisplay	file:
+FuelDisplay.java	FuelDisplay.java	1;"	F
+FuelDisplay.off	FuelDisplay.java	/^    Icon  off = new ImageIcon( getClass().getResource("led-grey.png"));$/;"	f	class:FuelDisplay
+FuelDisplay.quantity	FuelDisplay.java	/^    private JTextField quantity;$/;"	f	class:FuelDisplay	file:
+FuelDisplay.serialVersionUID	FuelDisplay.java	/^    private static final long serialVersionUID = 42l;$/;"	f	class:FuelDisplay	file:
+FuelDisplay.setFuel	FuelDisplay.java	/^    public void setFuel(float percent) {$/;"	m	class:FuelDisplay
+FuelDisplay.warn	FuelDisplay.java	/^    Icon warn = new ImageIcon( getClass().getResource("led-red.png"));$/;"	f	class:FuelDisplay
+FuelDisplay.warninglight	FuelDisplay.java	/^    private JLabel  warninglight;$/;"	f	class:FuelDisplay	file:
+LanderDash	LanderDash.java	/^    public LanderDash() {$/;"	m	class:LanderDash
+LanderDash	LanderDash.java	/^public class LanderDash extends JFrame implements Runnable {$/;"	c
+LanderDash.LanderDash	LanderDash.java	/^    public LanderDash() {$/;"	m	class:LanderDash
+LanderDash.alt	LanderDash.java	/^    AltitudeDisplay alt = new AltitudeDisplay();$/;"	f	class:LanderDash
+LanderDash.altitude	LanderDash.java	/^    float altitude;  \/* height above ground *\/$/;"	f	class:LanderDash
+LanderDash.connection	LanderDash.java	/^    DatagramPanel connection = new DatagramPanel();$/;"	f	class:LanderDash
+LanderDash.crashed	LanderDash.java	/^    boolean crashed; \/* crashed or not when down *\/$/;"	f	class:LanderDash
+LanderDash.flying	LanderDash.java	/^    boolean flying;  \/* is it flying *\/$/;"	f	class:LanderDash
+LanderDash.fuel	LanderDash.java	/^    float fuel;      \/* percent fuel remaining *\/$/;"	f	class:LanderDash
+LanderDash.fuelpc	LanderDash.java	/^    FuelDisplay fuelpc = new FuelDisplay();$/;"	f	class:LanderDash
+LanderDash.java	LanderDash.java	1;"	F
+LanderDash.main	LanderDash.java	/^    public static void main ( String[] args ) throws UnknownHostException {$/;"	m	class:LanderDash
+LanderDash.run	LanderDash.java	/^    public void run() {$/;"	m	class:LanderDash
+LanderDash.serialVersionUID	LanderDash.java	/^    public static final long serialVersionUID = 2L;$/;"	f	class:LanderDash
+VectorDisplay	VectorDisplay.java	/^    public VectorDisplay() {$/;"	m	class:VectorDisplay
+VectorDisplay	VectorDisplay.java	/^public class VectorDisplay extends JPanel {$/;"	c
+VectorDisplay.VectorDisplay	VectorDisplay.java	/^    public VectorDisplay() {$/;"	m	class:VectorDisplay
+VectorDisplay.contact	VectorDisplay.java	/^    Icon contact = new ImageIcon( getClass().getResource("led-orange.png"));$/;"	f	class:VectorDisplay
+VectorDisplay.contactlight	VectorDisplay.java	/^    private JLabel  contactlight;$/;"	f	class:VectorDisplay	file:
+VectorDisplay.gauge	VectorDisplay.java	/^    private JProgressBar gauge;$/;"	f	class:VectorDisplay	file:
+VectorDisplay.java	VectorDisplay.java	1;"	F
+VectorDisplay.off	VectorDisplay.java	/^    Icon  off = new ImageIcon( getClass().getResource("led-grey.png"));$/;"	f	class:VectorDisplay
+VectorDisplay.quantity	VectorDisplay.java	/^    private JTextField quantity;$/;"	f	class:VectorDisplay	file:
+VectorDisplay.serialVersionUID	VectorDisplay.java	/^    private static final long serialVersionUID = 42l;$/;"	f	class:VectorDisplay	file:
+VectorDisplay.warn	VectorDisplay.java	/^    Icon warn = new ImageIcon( getClass().getResource("led-red.png"));$/;"	f	class:VectorDisplay
+VectorDisplay.warninglight	VectorDisplay.java	/^    private JLabel  warninglight;$/;"	f	class:VectorDisplay	file:
+addressname	DatagramPanel.java	/^    JTextField addressname, port;$/;"	f	class:DatagramPanel
+alt	LanderDash.java	/^    AltitudeDisplay alt = new AltitudeDisplay();$/;"	f	class:LanderDash
+altitude	LanderDash.java	/^    float altitude;  \/* height above ground *\/$/;"	f	class:LanderDash
+bingo	FuelDisplay.java	/^    final float bingo = 10.0f;$/;"	f	class:FuelDisplay
+connection	LanderDash.java	/^    DatagramPanel connection = new DatagramPanel();$/;"	f	class:LanderDash
+contact	AltitudeDisplay.java	/^    Icon contact = new ImageIcon( getClass().getResource("led-orange.png"));$/;"	f	class:AltitudeDisplay
+contact	VectorDisplay.java	/^    Icon contact = new ImageIcon( getClass().getResource("led-orange.png"));$/;"	f	class:VectorDisplay
+contactlight	AltitudeDisplay.java	/^    private JLabel  contactlight;$/;"	f	class:AltitudeDisplay	file:
+contactlight	VectorDisplay.java	/^    private JLabel  contactlight;$/;"	f	class:VectorDisplay	file:
+crashed	LanderDash.java	/^    boolean crashed; \/* crashed or not when down *\/$/;"	f	class:LanderDash
+flying	LanderDash.java	/^    boolean flying;  \/* is it flying *\/$/;"	f	class:LanderDash
+fuel	LanderDash.java	/^    float fuel;      \/* percent fuel remaining *\/$/;"	f	class:LanderDash
+fuelpc	LanderDash.java	/^    FuelDisplay fuelpc = new FuelDisplay();$/;"	f	class:LanderDash
+gauge	AltitudeDisplay.java	/^    private JProgressBar gauge;$/;"	f	class:AltitudeDisplay	file:
+gauge	FuelDisplay.java	/^    private JProgressBar gauge;$/;"	f	class:FuelDisplay	file:
+gauge	VectorDisplay.java	/^    private JProgressBar gauge;$/;"	f	class:VectorDisplay	file:
+main	LanderDash.java	/^    public static void main ( String[] args ) throws UnknownHostException {$/;"	m	class:LanderDash
+off	AltitudeDisplay.java	/^    Icon  off = new ImageIcon( getClass().getResource("led-grey.png"));$/;"	f	class:AltitudeDisplay
+off	FuelDisplay.java	/^    Icon  off = new ImageIcon( getClass().getResource("led-grey.png"));$/;"	f	class:FuelDisplay
+off	VectorDisplay.java	/^    Icon  off = new ImageIcon( getClass().getResource("led-grey.png"));$/;"	f	class:VectorDisplay
+port	DatagramPanel.java	/^    JTextField addressname, port;$/;"	f	class:DatagramPanel
+proximity	AltitudeDisplay.java	/^    final float proximity = 15.0f;$/;"	f	class:AltitudeDisplay
+quantity	AltitudeDisplay.java	/^    private JTextField quantity;$/;"	f	class:AltitudeDisplay	file:
+quantity	FuelDisplay.java	/^    private JTextField quantity;$/;"	f	class:FuelDisplay	file:
+quantity	VectorDisplay.java	/^    private JTextField quantity;$/;"	f	class:VectorDisplay	file:
+run	LanderDash.java	/^    public void run() {$/;"	m	class:LanderDash
+serialVersionUID	AltitudeDisplay.java	/^    private static final long serialVersionUID = 42l;$/;"	f	class:AltitudeDisplay	file:
+serialVersionUID	DatagramPanel.java	/^    public static final long serialVersionUID = 2L;$/;"	f	class:DatagramPanel
+serialVersionUID	FuelDisplay.java	/^    private static final long serialVersionUID = 42l;$/;"	f	class:FuelDisplay	file:
+serialVersionUID	LanderDash.java	/^    public static final long serialVersionUID = 2L;$/;"	f	class:LanderDash
+serialVersionUID	VectorDisplay.java	/^    private static final long serialVersionUID = 42l;$/;"	f	class:VectorDisplay	file:
+setAddress	DatagramPanel.java	/^    void setAddress(InetSocketAddress where) {$/;"	m	class:DatagramPanel
+setAltitude	AltitudeDisplay.java	/^    public void setAltitude(float alt) {$/;"	m	class:AltitudeDisplay
+setFuel	FuelDisplay.java	/^    public void setFuel(float percent) {$/;"	m	class:FuelDisplay
+warn	AltitudeDisplay.java	/^    Icon warn = new ImageIcon( getClass().getResource("led-red.png"));$/;"	f	class:AltitudeDisplay
+warn	FuelDisplay.java	/^    Icon warn = new ImageIcon( getClass().getResource("led-red.png"));$/;"	f	class:FuelDisplay
+warn	VectorDisplay.java	/^    Icon warn = new ImageIcon( getClass().getResource("led-red.png"));$/;"	f	class:VectorDisplay
+warninglight	AltitudeDisplay.java	/^    private JLabel  warninglight;$/;"	f	class:AltitudeDisplay	file:
+warninglight	FuelDisplay.java	/^    private JLabel  warninglight;$/;"	f	class:FuelDisplay	file:
+warninglight	VectorDisplay.java	/^    private JLabel  warninglight;$/;"	f	class:VectorDisplay	file:

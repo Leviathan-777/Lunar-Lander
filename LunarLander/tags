@@ -1,0 +1,78 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Controller	lander/Controller.java	/^    public Controller(Model model) {$/;"	m	class:Controller
+Controller	lander/Controller.java	/^public class Controller {$/;"	c
+DatagramPanel	DatagramPanel.java	/^    public DatagramPanel() {$/;"	m	class:DatagramPanel
+DatagramPanel	DatagramPanel.java	/^public class DatagramPanel extends JPanel {$/;"	c
+Lander	Lander.java	/^    public Lander() {$/;"	m	class:Lander
+Lander	Lander.java	/^public class Lander extends JFrame implements Runnable {$/;"	c
+Model	lander/Model.java	/^    public Model() {$/;"	m	class:Model
+Model	lander/Model.java	/^public class Model implements ActionListener {$/;"	c
+O	lander/Model.java	/^    double O=0;$/;"	f	class:Model
+Odot	lander/Model.java	/^    double Odot;$/;"	f	class:Model
+Terrain	lander/Terrain.java	/^public class Terrain {$/;"	c
+View	lander/View.java	/^    public View(Model m) {$/;"	m	class:View
+View	lander/View.java	/^public class View extends JPanel {$/;"	c
+actionPerformed	lander/Model.java	/^    public void actionPerformed(ActionEvent t) {$/;"	m	class:Model
+addressname	DatagramPanel.java	/^    JTextField addressname, port;$/;"	f	class:DatagramPanel
+altitude	lander/Model.java	/^    double altitude;$/;"	f	class:Model
+connection	Lander.java	/^    DatagramPanel connection = new DatagramPanel();$/;"	f	class:Lander
+controller	Lander.java	/^    lander.Controller controller;$/;"	f	class:Lander
+defaults	Lander.java	/^    static Properties defaults = new Properties();;$/;"	f	class:Lander
+doCommand	lander/Controller.java	/^    String doCommand(String[] content) {$/;"	m	class:Controller
+doCondition	lander/Controller.java	/^    String doCondition(String[] content) {$/;"	m	class:Controller
+doState	lander/Controller.java	/^    String doState(String[] content) {$/;"	m	class:Controller
+doTerrain	lander/Controller.java	/^	String doTerrain(String[] content) {$/;"	m	class:Controller
+drawAltitude	lander/View.java	/^    void drawAltitude(Graphics g) {$/;"	m	class:View
+drawFuel	lander/View.java	/^    void drawFuel(Graphics g) {$/;"	m	class:View
+drawLander	lander/View.java	/^    void drawLander(Graphics g) {$/;"	m	class:View
+drawThrust	lander/View.java	/^    void drawThrust(Graphics g) {$/;"	m	class:View
+drawVelocity	lander/View.java	/^    void drawVelocity(Graphics g) {$/;"	m	class:View
+dt	lander/Model.java	/^    public final double dt = 0.05;$/;"	f	class:Model
+fuel	lander/Model.java	/^    double fuel=100;$/;"	f	class:Model
+g	lander/Model.java	/^    final  double g = 1.62;$/;"	f	class:Model
+generator	lander/Terrain.java	/^    static Random generator = new Random();$/;"	f	class:Terrain
+ground	lander/Model.java	/^    int[] ground;$/;"	f	class:Model
+ground	lander/Terrain.java	/^    public static double[] ground(int size, int frequencies) {$/;"	m	class:Terrain
+handle	lander/Controller.java	/^    public String handle(String[] message) {$/;"	m	class:Controller
+iscrashed	lander/Model.java	/^    boolean iscrashed = false;$/;"	f	class:Model
+isflying	lander/Model.java	/^    boolean isflying = true;$/;"	f	class:Model
+lander	Lander.java	/^    lander.Model lander = new lander.Model();$/;"	f	class:Lander
+lander	lander/Controller.java	/^    Model lander;$/;"	f	class:Controller
+lander	lander/Controller.java	/^package lander;$/;"	p
+lander	lander/Model.java	/^package lander;$/;"	p
+lander	lander/Terrain.java	/^package lander;$/;"	p
+lander	lander/View.java	/^package lander;$/;"	p
+landershape	lander/View.java	/^    Path2D landershape() {$/;"	m	class:View
+main	Lander.java	/^    public static void main ( String[] args ) throws UnknownHostException, IOException, ClassNotFoundException {$/;"	m	class:Lander
+model	lander/View.java	/^    Model model;$/;"	f	class:View
+noise	lander/Terrain.java	/^    static double[] noise(double f, int N) {$/;"	m	class:Terrain
+outline	lander/View.java	/^    Path2D outline = landershape();$/;"	f	class:View
+paintComponent	lander/View.java	/^    public void paintComponent(Graphics g) {$/;"	m	class:View
+port	DatagramPanel.java	/^    JTextField addressname, port;$/;"	f	class:DatagramPanel
+reset	lander/Model.java	/^    public void reset() {$/;"	m	class:Model
+roll	lander/Model.java	/^    double roll ;$/;"	f	class:Model
+run	Lander.java	/^    public void run() {$/;"	m	class:Lander
+serialVersionUID	DatagramPanel.java	/^    public static final long serialVersionUID = 2L;$/;"	f	class:DatagramPanel
+serialVersionUID	Lander.java	/^    public static final long serialVersionUID = 2L;$/;"	f	class:Lander
+serialVersionUID	lander/View.java	/^    public static final long serialVersionUID = 2L;$/;"	f	class:View
+setAddress	DatagramPanel.java	/^    void setAddress(InetSocketAddress where) {$/;"	m	class:DatagramPanel
+setIP	DatagramPanel.java	/^    void setIP(InetAddress adr) {$/;"	m	class:DatagramPanel
+setIP	DatagramPanel.java	/^    void setIP(String ip) {$/;"	m	class:DatagramPanel
+setPort	DatagramPanel.java	/^    void setPort(String p) {$/;"	m	class:DatagramPanel
+setPort	DatagramPanel.java	/^    void setPort(int p) {$/;"	m	class:DatagramPanel
+throttle	lander/Model.java	/^    double throttle;$/;"	f	class:Model
+thrust	lander/Model.java	/^    double thrust ;$/;"	f	class:Model
+v	lander/Model.java	/^    double v;$/;"	f	class:Model
+view	lander/Model.java	/^    JPanel view;$/;"	f	class:Model
+weighted_sum	lander/Terrain.java	/^    static double[] weighted_sum(double[] amplitudes, double[][] noises) {$/;"	m	class:Terrain
+width	lander/Model.java	/^    final int width = 1000;$/;"	f	class:Model
+wrapped	lander/Terrain.java	/^    public static double[] wrapped(double[] gnd) {$/;"	m	class:Terrain
+x	lander/Model.java	/^    double x=100;$/;"	f	class:Model
+xdot	lander/Model.java	/^    double xdot = 10;$/;"	f	class:Model
+y	lander/Model.java	/^    double y=50;$/;"	f	class:Model
+ydot	lander/Model.java	/^    double ydot;$/;"	f	class:Model

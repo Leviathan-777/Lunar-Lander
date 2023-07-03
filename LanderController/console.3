@@ -1,0 +1,196 @@
+.\" Process this file with
+.\" groff -man -Tutf8 console.3
+.\"
+.TH KF5010 Console "September 2017" Unix "Library User Manual"
+.SH NAME
+console.o console_safe.o \- LCD and LED library for KF5010
+.SH SYNOPSIS
+.I #include <console.h>
+.PP
+.BI "typedef enum {LED_WHITE, LED_RED, LED_GREEN, LED_BLUE} leds_t;"
+.PP
+.BI "int console_init(void);"
+.PP
+.BI "void lcd_set_pos(int " row ", int " column ");"
+.PP
+.BI "void lcd_set_colour(int " foreground " , int " background ");"
+.PP
+.BI "void lcd_set_attr(int " attributes ");"
+.PP
+.BI "void lcd_unset_attr(int " attributes ");"
+.PP
+.BI "int  lcd_write(const char *" fmt "," ... ");"
+.PP
+.BI "void led_on(leds_t " n ");"
+.PP
+.BI "void led_off(leds_t " n ");"
+.PP
+.BI "void led_toggle(leds_t " n ");"
+.PP
+.BI "int is_pressed(leds_t " bu ");"
+
+.SH DESCRIPTION
+.B console.o / console_safe.o
+both provide a simple simulation of an LCD display, a set of
+coloured LEDs, and push-button input. console_safe.o provides a
+thread-safe implementation, console.o does not
+
+To build a program that uses either of these implementations, link it
+with the implementation that you want and include libncursesw, e.g.
+.br
+    cc -o myprogram -pthread myprogram.c console_safe.o -lncursesw 
+.br
+or
+.br
+    cc -o myprogram -pthread myprogram.c console.o -lncursesw   
+.TP
+.B int console_init( void );
+Initialises the LCD and LEDs.  Starts the curses environment and sets out the screen.
+.TP
+.BI "void lcd_set_pos(int " row ", int " column ");"
+Sets the cursor position on the LCD screen.
+.TP
+.BI "void lcd_set_colour(int " foreground " , int " background ");"
+Sets the current
+.I foreground
+and
+.I background
+colours of the screen for subsequent writing.  If you want to just set the
+.I foreground
+colour, you will have to keep track of the
+.I background
+colour and set that as well.
+Values are as for
+.B curs_color(3x)
+For a quick visual guide, these are identical to the 256 extended ANSI colours.
+https://en.wikipedia.org/wiki/ANSI_escape_code#Colors
+.RS
+.TP
+.B 0x00-0x07
+standard colors
+.TP
+.B 0x08-0x0F
+high intensity colors
+.TP
+.B 0x10-0xE7
+6 * 6 * 6 cube (216 colors):
+.br
+16 + 36 * r + 6 * g + b (0 <= r, g, b <= 5)
+.TP
+.B 0xE8-0xFF
+grayscale from black to white in 24 steps
+.RE
+
+.TP
+.BI "void lcd_set_attr(int " attributes ");"
+Sets the attributes for the text using the following values.  Text is now printed with the properties set.
+.RS
+.TP
+.B A_NORMAL    
+Normal display (no highlight)
+.TP
+.B A_STANDOUT  
+Best highlighting mode of the terminal.
+.TP
+.B A_UNDERLINE 
+Underlining
+.TP
+.B A_REVERSE   
+Reverse video
+.TP
+.B A_BLINK     
+Blinking
+.TP
+.B A_DIM       
+Half bright
+.TP
+.B A_BOLD      
+Extra bright or bold
+.TP
+.B A_INVIS    
+Invisible or blank mode
+.PP
+These are the values straight from the
+.B curses
+library
+.B curs_attr(3x)
+.RE
+
+.TP
+.BI "void lcd_unset_attr(int " attributes ");"
+Unsets the attributes about.  Turns off the properties for subsequent
+printing.
+
+.TP
+.BI "int  lcd_write(const char *" fmt "," ... ");"
+Writes to the LCD.  In all other respects identical to
+.B printf(3)
+
+.TP
+.BI "void led_on(leds_t " n ");"
+Turns on an LED in leds_t
+
+.TP
+.BI "void led_off(leds_t " n ");"
+Turns off an LED in leds_t
+
+.TP
+.BI "void led_toggle(leds_t " n ");"
+Toggles the state of an LED in leds_t, ON -> OFF, OFF -> ON
+
+.TP
+.BI "int is_pressed(int " button ");"
+Returns true if a button is pressed.  The
+.I button
+can be an ASCII character 'a'
+or one of the key pad constants from curses
+.B curs_getch(3x)
+.br
+.B KEY_DOWN
+The arrow keys ...
+.br
+.B KEY_UP
+.br
+.B KEY_LEFT
+.br
+.B KEY_RIGHT
+
+.SH FILES
+The header file
+.I console.h
+includes the curses header file
+.I curses.h
+to make the attribute and key constants available for the program
+
+.SH ENVIRONMENT
+Uses the
+.B curses
+library.
+
+.TP
+On Linux Machines
+Link to the ncurses library with wide character support
+.br
+.RI   "    cc " source " -lncursesw"
+.TP
+On Macs (OSX)
+Link to the curses library
+.br
+.RI    "    cc " source " -lcurses"
+.SH DIAGNOSTICS
+If you want to use
+.B printf
+diagnostics in your program.
+Write messages to
+.B stderr
+
+ fprintf(stderr,"%s:%d diagnostic n=%d\n",__FILE__,__LINE__, n );
+
+Have two terminals open, if they are ttys01 and ttys02 (from
+.B who am i
+).  In ttys01 run the program and redirect the standard error to the other terminal
+
+  ./program 2> /dev/ttys02
+
+.SH AUTHOR
+Dr Alun Moon <alun.moon@northumbria.ac.uk>

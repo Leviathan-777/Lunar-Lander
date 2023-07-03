@@ -1,0 +1,215 @@
+.\" Process this file with
+.\" groff -man -Tutf8 libnet.3
+.\"
+.TH KV5002 LIBNET "November 2019" Unix "Library User Manual"
+.SH NAME
+libnet.o \- Network Utilities Library for KV5002
+.SH SYNOPSIS
+.I #include <libnet.h>
+.TP
+.BI "int getaddr(const char *" node ", const char *" service ", struct addrinfo **" address ");"
+.TP
+.BI "int mksocket(void);"
+.TP
+.BI "int bindsocket(int " sfd ", const struct sockaddr *" addr ", socklen_t " addrlen ");"
+.TP
+.BI "char *addrtouri(struct sockaddr_in *" addr ");"
+.TP
+.BI "typedef size_t (*" handler_t ")(char *, size_t, char *, size_t, struct sockaddr_in *);"
+.TP
+.BI "int server(int " srvrsock" , handler_t " handlemsg ");"
+.TP
+.BI "extern int sock;"
+.TP
+.BI "void finished(int "signal " );"
+.TP
+.BI "void cleanup(void);"
+
+.SH DESCRIPTION
+.B libnet.o
+is a library of utility functions, which are wrappers around some of the
+networking functions.  The aim is to make writing programs that use  UDP and
+TCP an easier task.
+
+To build the library:
+.br
+    cc -c libnet.c
+.br
+To use the library:
+.br
+    cc -o prog libnet.o  prog.c
+.TP
+.BI "int getaddr(const char *" node ", const char *" service ", struct addrinfo **" address ");"
+Gets an address for a host ip and/or port number.  It acts as a wrapper round
+.B getaddrinfo(3)
+.RS
+.TP 
+.B node
+the host, either the domain name or the IP address.  
+If 
+.B node
+is
+.B NULL 
+then an address for creating a server is generated
+
+.TP
+.B service
+the service name (such as 
+.B http 
+) or a string representation of a port number.
+
+.TP
+.B address
+A pointer to a pointer to a 
+.B struct addrinfo
+.  
+.B getaddrinfo
+returns a pointer to a block of memory allocated by the kernel.  You need to
+pass a pointer to the pointer variable so that it can be filled in by the
+kernel system call.
+.PP
+Returns 
+.B true
+or
+.B false
+depending on the underlying success.  Errors are written to 
+.I stderr
+.RE
+
+.TP
+.BI "int mksocket(void);"
+Returns a socket descriptor to a socket created for UDP datagrams.
+.IP
+Returns 
+.B false
+if a socket cannot be created, and a valid
+.B file descriptor
+(int) on success.
+
+.TP
+.BI "int bindsocket(int " sfd ", const struct sockaddr *" addr ", socklen_t " addrlen ");"
+Binds a socket to an address (creating a server) listening for incoming
+connections.
+.RS
+.TP  
+.B sfd 
+the 
+.I file descriptor
+for the 
+.I socket
+.TP
+.B addr 
+the address field
+.I ai_addr
+from the address  structure returned from 
+.B getaddr
+.TP
+.B addrlen
+The 
+.I ai_addrlen
+field of the
+.I addrinfo
+structure.
+.RE
+
+.TP
+.BI "char *addrtouri(struct sockaddr_in *" addr ");"
+Converts a socket address into a string using the 
+.IR host : socket
+format
+.RS
+.TP
+.B addr
+A pointer to a 
+.I struct sockaddr_in
+structure as found in the 
+.I addrinfo 
+structure.
+.RE
+
+.TP
+.BI "typedef size_t (*" handler_t ")(char *, size_t, char *, size_t, struct sockaddr_in *);"
+A 
+.I typedef
+for a protocol handling function.  The function should take five paramaters:
+.RS
+.TP
+.I char *
+A pointer to a string buffer holding the incoming message
+.TP
+.I size_t
+The length of the incoming message.
+.TP
+.I char *
+A pointer to a string buffer in which to format the reply
+.TP
+.I size_t
+The length of the reply message buffer.
+.TP
+.I struct sockaddr_in *
+A pointer to a 
+.I struct sockaddr_in
+structure holding the socket address of the remote machine.
+.RE
+The function returns the length of the formatted reply message as a
+.I size_t
+
+.TP
+.BI "int server(int " srvrsock" , handler_t " handlemsg ");"
+A simple server, that handles the buffers,
+.I recvfrom
+and 
+.I sendto
+it requires
+.RS
+.TP
+.B srvrsock
+A UDP socked bound to a port for listening for incoming messages.
+.TP
+.B handlemsg
+A function pointer to the function that decodes a message and formats a reply.
+.RE
+This function
+.B does not
+return.
+
+.TP
+.BI "extern int cleanupsock;"
+A global variable needed for the cleanup function.  Set this to the 
+.I file descriptor
+of the socket to be closed on cleanup.
+
+.TP
+.BI "void finished(int "signal " );"
+A simple signal handler that just calls
+.B exit
+
+.TP
+.BI "void cleanup(void);"
+A function to register with 
+.B atexit
+that closes the socket who's descriptor is in
+.I cleanupsock
+
+.SH FILES
+.TP
+.I libnet.h
+The header file for #include
+.TP
+.I libnet.c
+The source file for the library.
+
+.SH ENVIRONMENT
+Needs the header files:
+.br
+.RS
+#include <errno.h>
+#include <string.h>
+
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netdb.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+.RE
+
